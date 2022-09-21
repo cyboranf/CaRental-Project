@@ -1,4 +1,4 @@
-package pl.project.carental.bootmaven;
+package pl.project.carental;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
