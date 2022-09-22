@@ -28,6 +28,14 @@ public class Car {
         this.id = id;
     }
 
+
+
+    @OneToOne
+    private CarDetails carDetails;
+
+    @OneToOne
+    private AccessKey accessKey;
+
     public String getBrand() {
         return brand;
     }
@@ -59,7 +67,8 @@ public class Car {
     public void setIs_available(Boolean is_available) {
         this.is_available = is_available;
     }
-
+    public Car() {
+    }
     public Car(long id, String brand, String model, String type, Boolean is_available) {
         this.id = id;
         this.brand = brand;
@@ -68,8 +77,7 @@ public class Car {
         this.is_available = is_available;
     }
 
-    public Car() {
-    }
+
 
     @Override
     public String toString() {

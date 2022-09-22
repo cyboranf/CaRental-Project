@@ -1,6 +1,8 @@
 package pl.project.carental.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -18,7 +20,8 @@ public class User {
     @Column(name = "password",nullable = false)
     private String password;
 
-
+    @OneToMany
+    private List<Car> cars=new ArrayList<>();
 
     public User(long id, String firstname, String lastname, String email, String password) {
         this.id = id;
@@ -27,6 +30,8 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+
 
     public User() {
     }
