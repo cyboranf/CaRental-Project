@@ -3,31 +3,7 @@
 
 <%@include file="header.jsp"%>
 
-<body>
-<header class="page-header">
-    <nav class="navbar navbar-expand-lg justify-content-around">
-        <a href="/" class="navbar-brand main-logo">
-            Ca<span>Rental</span>
-        </a>
-        <ul class="nav nounderline text-uppercase">
-            <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="/login">sign in</a>
-            </li>
-            <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="/register">sign up</a>
-            </li>
-            <li class="nav-item ml-4">
-                <a class="nav-link" href="#about">about app</a>
-            </li>
-            <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="../toChangeHTMLs/recipes.html">cars</a>
-            </li>
-            <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="#contact">contact</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+
 
 <section class="padding-large bg-light">
     <div id="carouselExampleControls" class="carousel slide main-slider" data-ride="carousel">
