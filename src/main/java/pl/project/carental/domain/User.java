@@ -23,8 +23,8 @@ public class User {
     @OneToMany
     private List<Car> cars=new ArrayList<>();
 
-    public User(long id, String firstname, String lastname, String email, String password) {
-        this.id = id;
+    public User(String firstname, String lastname, String email, String password) {
+
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;

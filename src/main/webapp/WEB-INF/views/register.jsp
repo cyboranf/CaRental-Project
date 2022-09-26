@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="header.jsp"%>
 
 <section class="dashboard-section">
@@ -7,8 +8,8 @@
             <div class="container w-25">
                 <!-- fix action, method -->
                 <!-- add name attribute for all inputs -->
-                <form class="padding-small text-center">
-                    <h1 class="text-color-darker">Rejestracja</h1>
+                <form class="padding-small text-center" method="post">
+                    <h1 class="text-color-darker">Sign up</h1>
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" name="name" placeholder="first name">
                     </div>
@@ -22,7 +23,7 @@
                         <input type="text" class="form-control" id="password" name="password" placeholder="password">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="repassword" name="password" placeholder="password">
+                        <input type="text" class="form-control" id="repassword" name="repassword" placeholder="password">
                     </div>
                     <button class="btn btn-color rounded-0" type="submit">Create an account</button>
                 </form>
