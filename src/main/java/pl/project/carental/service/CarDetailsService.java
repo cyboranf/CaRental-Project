@@ -17,7 +17,7 @@ public class CarDetailsService {
         this.carDetailsRepository = carDetailsRepository;
     }
 
-    public CarDetails saveCar(CarDetails carDetails){
+    public CarDetails saveCarDetails(CarDetails carDetails){
         carDetailsRepository.save(carDetails);
         return carDetails;
     }
