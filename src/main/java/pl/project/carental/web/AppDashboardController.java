@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
-public class DashboardController {
+public class AppDashboardController {
     private final CarService carService;
 
-    public DashboardController(CarService carService) {
+    public AppDashboardController(CarService carService) {
         this.carService = carService;
     }
 
