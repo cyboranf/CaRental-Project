@@ -22,7 +22,7 @@
     <div class="dashboard-alerts">
       <div class="alert-item alert-info">
         <i class="fas icon-circle fa-info-circle"></i>
-        <span class="font-weight-bold">No. Cars: ${numberOfRecipe}</span>
+        <span class="font-weight-bold">No. Cars: ${numberOfCars}</span>
       </div>
     </div>
   </div>

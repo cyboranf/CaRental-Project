@@ -28,13 +28,18 @@ public class LoginController {
 
     @PostMapping("/login")
     public ModelAndView submit(@RequestParam String name,
-                              @RequestParam String password){
-        List<User> usersList=userService.findAll();
+                               @RequestParam String password) {
+        List<User> usersList = userService.findAll();
 
-        for (User user:usersList){
-            if (name.toLowerCase().equals(user.getFirstname()) && password.toLowerCase().equals(user.getPassword())){
+
+        for (User user : usersList) {
+            if (name.toLowerCase().equals(user.getFirstname().toLowerCase()) && password.toLowerCase().equals(user.getPassword().toLowerCase())) {
                 return new ModelAndView("dashboard");
-            }else {
+            }
+        }
+        for (User user : usersList) {
+            if (!name.toLowerCase().equals(user.getFirstname().toLowerCase()) || !password.toLowerCase().equals(user.getPassword().toLowerCase())) {
+                
                 return new ModelAndView("login");
             }
         }
