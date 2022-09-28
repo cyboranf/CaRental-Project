@@ -8,6 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.project.carental.domain.User;
 import pl.project.carental.service.UserService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
@@ -39,7 +42,7 @@ public class LoginController {
         }
         for (User user : usersList) {
             if (!name.toLowerCase().equals(user.getFirstname().toLowerCase()) || !password.toLowerCase().equals(user.getPassword().toLowerCase())) {
-                
+
                 return new ModelAndView("login");
             }
         }

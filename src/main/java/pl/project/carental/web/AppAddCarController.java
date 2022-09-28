@@ -33,6 +33,6 @@ public class AppAddCarController {
         car.setModel(model);
         car.setType(type);
         carService.saveCar(car);
-        return new ModelAndView("appDetailsAdd");
+        return new ModelAndView("appCarDetailsAdd");
     }
 }
