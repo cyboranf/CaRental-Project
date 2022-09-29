@@ -47,13 +47,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app/editData">
-                    <span>Edit Data</span>
+                <a class="nav-link" href="/app/avail/cars">
+                    <span>Available Cars</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="/app/changePassword">
+                <a class="nav-link disabled" href="/app/editPassword">
                     <span>Change Password</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
