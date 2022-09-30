@@ -15,6 +15,6 @@ public class AppCarsController {
 
     @GetMapping("/app/car/list")
     public ModelAndView show() {
-        return new ModelAndView("cars");
+        return new ModelAndView("appCars");
     }
 }

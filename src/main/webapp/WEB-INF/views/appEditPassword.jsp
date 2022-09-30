@@ -1,11 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="appheader.jsp"%>
+<%@include file="header.jsp"%>
 
 <section class="dashboard-section">
     <div class="container pt-4 pb-4">
         <div class="border-dashed view-height">
             <div class="container w-25">
-                <form class="padding-small text-center" method="post">
+                <form class="padding-big text-center" method="post">
                     <h1 class="text-color-darker">Edit your password</h1>
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" name="name" placeholder="name">
@@ -31,3 +31,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+<%@include file="appfooter.jsp"%>
