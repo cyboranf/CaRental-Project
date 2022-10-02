@@ -357,7 +357,7 @@ hr {
 
 .icon-user {
     font-size: 2rem;
-    color: var(--link-color);
+    color: red;
 }
 .icon-circle {
     font-size: 2rem;
@@ -401,14 +401,14 @@ hr {
 }
 
 .dashboard-alerts {
-    margin-left: 50px;
-    width: 70%;
+    margin-left: 70px;
+    width: 90%;
 }
 .alert-item {
     padding: 10px;
     margin-bottom: 15px;
     display: flex;
-    align-items: center;
+    align-items: normal;
 }
 .alert-item span {
     margin-left: 15px;

@@ -27,11 +27,16 @@ public class AppDashboardController {
                                 HttpServletResponse response){
         ModelAndView mav=new ModelAndView("dashboard");
         int numberOfCars=0;
+        int numberOfAvailCars=0;
         List<Car> carList=carService.findAll();
         for (Car car:carList){
+            if(car.getIs_available().equals(true)){
+                numberOfAvailCars+=1;
+            }
             numberOfCars+=1;
         }
         request.setAttribute("numberOfCars",numberOfCars);
+        request.setAttribute("numberOfAvailCars",numberOfAvailCars);
 
         Car lastCar=carList.get(numberOfCars-1);
         request.setAttribute("brand",lastCar.getBrand());

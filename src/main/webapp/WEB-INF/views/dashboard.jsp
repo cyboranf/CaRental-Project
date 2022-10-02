@@ -22,10 +22,11 @@
     <div class="dashboard-alerts">
       <div class="alert-item alert-info">
         <i class="fas icon-circle fa-info-circle"></i>
-        <span class="font-weight-bold">No. Cars: ${numberOfCars}</span>
+        <span class="font-weight-bold">Number of Available Cars: ${numberOfAvailCars}</span>
       </div>
     </div>
   </div>
+
   <div class="m-4 p-4 border-dashed">
     <h2 class="dashboard-content-title">
       <span>Newest Car:</span>
