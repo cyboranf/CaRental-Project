@@ -8,6 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.project.carental.domain.Car;
 import pl.project.carental.service.CarService;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @Controller
 public class AppAddCarController {
     private final CarService carService;
@@ -26,13 +31,18 @@ public class AppAddCarController {
     public ModelAndView save(@RequestParam String brand,
                              @RequestParam boolean isAvail,
                              @RequestParam String model,
-                             @RequestParam String type){
+                             @RequestParam String type,
+                             HttpServletResponse response,
+                             HttpServletRequest request) throws IOException {
         Car car=new Car();
         car.setBrand(brand);
         car.setIs_available(isAvail);
         car.setModel(model);
         car.setType(type);
         carService.saveCar(car);
+
+
+
         return new ModelAndView("appCarDetailsAdd");
     }
 }

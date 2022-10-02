@@ -28,29 +28,26 @@
   </div>
   <div class="m-4 p-4 border-dashed">
     <h2 class="dashboard-content-title">
-      <span>Newest Car</span> ${planLast[0].planName}
+      <span>Newest Car:</span>
     </h2>
-    <c:forEach var="entry" items="${map}">
-    <table class="table">
-      <thead>
-      <tr class="d-flex">
-        <th class="col-2">${entry.key}</th>
-        <th class="col-8"></th>
-        <th class="col-2"></th>
-      </tr>
-      </thead>
-      <tbody>
-      <c:forEach var="info" items="${entry.value}">
-      <tr class="d-flex">
-        <td class="col-2">${info.mealName}</td>
-        <td class="col-8">${info.recipeDescription}</td>
-        <td class="col-2">
-          <a href="/app/recipe/details?id=${info.id}" class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
-            <%--dodany link do recipeList.jsp--%>
-        </td>
-      </tr>
-      </c:forEach>
-      </c:forEach>
+    <h2 class="dashboard-content-title">
+     <span> Brand: </span>${brand}
+    </h2>
+    <h2 class="dashboard-content-title">
+     <span> Model: </span>${model}
+    </h2>
+    <h2 class="dashboard-content-title">
+     <span> Type: </span>${type}
+    </h2>
+    <h2 class="dashboard-content-title">
+      <span>Is Avail:</span> ${isAvail}
+    </h2>
+    <h2 class="dashboard-content-title">
+      <span>Price for hour:</span> ${pph}
+    </h2>
+    <h2 class="dashboard-content-title">
+      <span>Price for day</span> ${ppd}
+    </h2>
   </div>
 </div>
 </div>

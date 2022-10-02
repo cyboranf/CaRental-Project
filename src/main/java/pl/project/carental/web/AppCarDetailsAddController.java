@@ -31,7 +31,7 @@ public class AppCarDetailsAddController {
         carDetails.setFuelType(fuelType);
         carDetails.setPackageName(PacName);
         carDetails.setPower(power);
-        carDetails.setPower((int) ppd);
+        carDetails.setPrice_per_day(ppd);
         carDetails.setPrice_per_hour(ppd/10);
         carDetailsService.saveCarDetails(carDetails);
         return new ModelAndView("dashboard");

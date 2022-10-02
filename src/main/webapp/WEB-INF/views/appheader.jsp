@@ -20,7 +20,7 @@
 <body>
 <header class="page-header">
     <nav class="navbar navbar-expand-lg justify-content-between">
-        <a href="/" class="navbar-brand main-logo main-logo-smaller">
+        <a href="/app/dashboard" class="navbar-brand main-logo main-logo-smaller">
             Ca<span>Rental</span>
         </a>
         <div class="d-flex justify-content-around">
@@ -37,6 +37,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/app/dashboard">
                     <span>Dashboard</span>
+                    <i class="fas fa-angle-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <span>Profile</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>

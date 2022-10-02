@@ -8,8 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.project.carental.domain.User;
 import pl.project.carental.service.UserService;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
@@ -31,12 +33,18 @@ public class LoginController {
 
     @PostMapping("/login")
     public ModelAndView submit(@RequestParam String name,
-                               @RequestParam String password) {
+                               @RequestParam String password,
+                               HttpServletRequest request,
+                               HttpServletResponse response) throws IOException {
         List<User> usersList = userService.findAll();
 
 
         for (User user : usersList) {
             if (name.toLowerCase().equals(user.getFirstname().toLowerCase()) && password.toLowerCase().equals(user.getPassword().toLowerCase())) {
+                HttpSession loginSession= request.getSession();
+                response.addCookie(new Cookie("cookieName",user.getFirstname()));
+                loginSession.setAttribute("logged",true);
+                loginSession.setAttribute("user",user);
                 return new ModelAndView("dashboard");
             }
         }
