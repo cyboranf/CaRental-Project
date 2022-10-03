@@ -10,6 +10,7 @@ import pl.project.carental.service.CarService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,7 +27,13 @@ public class AppRentCarController {
     public ModelAndView show(HttpServletRequest request,
                              HttpServletResponse response){
         List<Car> carList=carService.findAll();
-        request.setAttribute("carList",carList);
+        List<Car> availCarList=new ArrayList<>();
+        for (Car car:carList){
+            if (car.getIs_available().equals(true)){
+                availCarList.add(car);
+            }
+        }
+        request.setAttribute("carList",availCarList);
 
         return new ModelAndView("appRentCar");
     }
