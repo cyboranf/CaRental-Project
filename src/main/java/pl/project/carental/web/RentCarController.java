@@ -1,4 +1,4 @@
 package pl.project.carental.web;
 
-public class RentCar {
+public class RentCarController {
 }
