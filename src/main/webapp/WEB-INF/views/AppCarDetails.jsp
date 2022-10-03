@@ -8,7 +8,7 @@
     </h2>
 <%--    car--%>
     <h2 class="dashboard-content-title">
-        <span>Brand and Model</span> ${brand} ${model}
+        <span>Brand and Model</span> ${brandd} ${model}
     </h2>
     <h2 class="dashboard-content-title">
         <span> Fuel Type: </span> ${fuelType}

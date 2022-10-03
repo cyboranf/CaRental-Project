@@ -42,8 +42,9 @@ private final CarDetailsService carDetailsService;
         CarDetails carDetail=carDetailsService.findById(id);
 
         request.setAttribute("id",id);
-        request.setAttribute("brand",car.getBrand());
+        request.setAttribute("brandd",car.getBrand());
         request.setAttribute("model",car.getModel());
+        request.setAttribute("fuelType",carDetail.getFuelType());
         request.setAttribute("packageName",carDetail.getPackageName());
         request.setAttribute("power",carDetail.getPower());
         request.setAttribute("pph",carDetail.getPrice_per_hour());

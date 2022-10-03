@@ -27,6 +27,7 @@ public class AppAvailCarsController {
         for (Car car:carList){
             if (car.getIs_available().equals(true)){
                 availCarList.add(car);
+
             }
         }
         request.setAttribute("carList",availCarList);
