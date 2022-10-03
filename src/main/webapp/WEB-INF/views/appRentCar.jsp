@@ -7,7 +7,7 @@
   <div class="dashboard-content border-dashed p-3 m-4 view-height">
 
     <div class="row border-bottom border-3 p-1 m-1">
-      <div class="col noPadding"><h3 class="color-header text-uppercase">Car available to rent list</h3></div>
+      <div class="col noPadding"><h3 class="color-header text-uppercase">List of Cars available to rent</h3></div>
 
     </div>
 

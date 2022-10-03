@@ -8,7 +8,7 @@
       <div class="menu-item border-dashed">
         <a href="/app/car/add">
           <i class="far fa-plus-square icon-plus-square"></i>
-          <span class="title">add car</span>
+          <span class="title">Add car</span>
         </a>
       </div>
       <div class="menu-item border-dashed">
