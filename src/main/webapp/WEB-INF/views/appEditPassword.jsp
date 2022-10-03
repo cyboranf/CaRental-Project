@@ -11,10 +11,10 @@
                         <input type="text" class="form-control" id="name" name="name" placeholder="name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="oldPassword" name="password" placeholder="old password">
+                        <input type="text" class="form-control" id="oldPassword" name="oldPassword" placeholder="old password">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="newPassword" name="password" placeholder="new password">
+                        <input type="text" class="form-control" id="newPassword" name="newPassword" placeholder="new password">
                     </div>
                     <button class="btn btn-color rounded-0" type="submit">Edit</button>
                 </form>
