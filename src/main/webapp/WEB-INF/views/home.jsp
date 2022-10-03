@@ -29,7 +29,43 @@
                     </div>
                 </div>
             </div>
+            <div class="carousel-item">
+                <div class="container w-75 d-flex">
+                    <div class="carousel-caption d-block">
+                        <img src="<c:url value="/css/images/tesla-S.jpg"/>" alt="" width="800" height="459">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container w-75 d-flex">
+                    <div class="carousel-caption d-block">
+                        <img src="<c:url value="/css/images/Gla.jpg"/>" alt="" width="800" height="459">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container w-75 d-flex">
+                    <div class="carousel-caption d-block">
+                        <img src="<c:url value="/css/images/RangeRover.jpg"/>" alt="" width="800" height="459">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container w-75 d-flex">
+                    <div class="carousel-caption d-block">
+                        <img src="<c:url value="/css/images/MercedesS.jpg"/>" alt="" width="800" height="459">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container w-75 d-flex">
+                    <div class="carousel-caption d-block">
+                        <img src="<c:url value="/css/images/LucidAir.jpg"/>" alt="" width="800" height="459">
+                    </div>
+                </div>
+            </div>
         </div>
+
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
