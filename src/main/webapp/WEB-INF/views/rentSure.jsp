@@ -28,7 +28,7 @@
   </h2>
 
 </div>
-<a href="" class="btn btn-warning rounded-0 text-light m-1"><span>Yes</span></a>
+<a href="/app/profile" class="btn btn-warning rounded-0 text-light m-1"><span>Yes</span></a>
 <a href="/app/rentCar" class="btn btn-warning rounded-0 text-light m-1"><span>No</span></a>
 </div>
 </div>

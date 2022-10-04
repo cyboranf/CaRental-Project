@@ -28,7 +28,7 @@
 
 </div>
 <a href="/app/rentCar" class="btn btn-warning rounded-0 text-light m-1"><span>Back</span></a>
-<a href="/app/user" class="btn btn-warning rounded-0 text-light m-1"><span>Rent</span></a>
+<a href="/app/sureRent/${id}" class="btn btn-warning rounded-0 text-light m-1"><span>Rent</span></a>
 </div>
 </div>
 </section>

@@ -29,7 +29,10 @@
                 <a class="nav-link color-header" href="/app/car/list">All Cars</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="">Your Profile: ${cookie.cookieName}</a>
+              <a class="nav-link color-header" href="">Your Profile:  </a>
+            </li>
+            <li class="nav-item ml-4">
+                <h4 class="text-light mr-3" href="">  ${cookie.cookieName.value}</h4>
 
             </li>
             <li class="nav-item ml-4">
