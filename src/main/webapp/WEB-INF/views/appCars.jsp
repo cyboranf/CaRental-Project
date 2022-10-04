@@ -26,7 +26,7 @@
         <a class="nav-link color-header" href="/app/avail/cars">Available Cars</a>
       </li>
       <li class="nav-item ml-4">
-        <a class="nav-link color-header" href="">My profile</a>
+        <a class="nav-link color-header" href="/app/profile">My profile</a>
       </li>
 
     </ul>
