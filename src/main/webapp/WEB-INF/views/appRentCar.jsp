@@ -31,7 +31,7 @@
           <td class="col-7">${car.model}, ${car.type}</td>
           <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
             <a href="/app/car/details/${car.id}" class="btn btn-info rounded-0 text-light m-1">Details</a>
-            <a href="/app/car/edit?id=${car.id}" class="btn btn-warning rounded-0 text-light m-1">Rent</a>
+            <a href="/app/sureRent/${car.id}" class="btn btn-warning rounded-0 text-light m-1">Rent</a>
           </td>
         </tr>
 
