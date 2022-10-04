@@ -26,9 +26,18 @@
   <h2 class="dashboard-content-title">
     <span>Price for day:</span> ${ppd}
   </h2>
-
+  <form class="padding-small text-center" method="post">
+    <h1 class="text-color-darker">How long would you want to rent for</h1>
+    <div class="form-group">
+      <input type="text" class="form-control" id="days" name="days" placeholder="days">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="hours" name="hours" placeholder="hours">
+    </div>
+    <button class="btn btn-color rounded-0" type="submit">Confirm</button>
+  </form>
 </div>
-<a href="/app/profile" class="btn btn-warning rounded-0 text-light m-1"><span>Yes</span></a>
+<a href="/app/profile/${cookie.car.value}/${cookie.cookieName.value}?days=${d}&hours=${h}" class="btn btn-warning rounded-0 text-light m-1"><span>Yes</span></a>
 <a href="/app/rentCar" class="btn btn-warning rounded-0 text-light m-1"><span>No</span></a>
 </div>
 </div>
