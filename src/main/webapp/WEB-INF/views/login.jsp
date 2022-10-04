@@ -11,7 +11,7 @@
                         <input type="text" class="form-control" id="name" name="name" placeholder="name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="password" name="password" placeholder="password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password">
                     </div>
                     <button class="btn btn-color rounded-0" type="submit">Sign in</button>
                 </form>

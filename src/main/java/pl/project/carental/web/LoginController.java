@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-import java.util.Locale;
 
 @Controller
 public class LoginController {
@@ -30,9 +29,9 @@ public class LoginController {
         ModelAndView mav = new ModelAndView("login");
         return mav;
     }
-
+    public String login="";
     @PostMapping("/login")
-    public ModelAndView submit(@RequestParam String name,
+    public String Stringsubmit(@RequestParam String name,
                                @RequestParam String password,
                                HttpServletRequest request,
                                HttpServletResponse response) throws IOException {
@@ -45,18 +44,20 @@ public class LoginController {
                 response.addCookie(new Cookie("cookieName",user.getFirstname()));
                 loginSession.setAttribute("logged",true);
                 loginSession.setAttribute("user",user);
-                return new ModelAndView("dashboard");
+                login=user.getFirstname();
+
+                return "redirect:/app/dashboard";
             }
         }
         for (User user : usersList) {
             if (!name.toLowerCase().equals(user.getFirstname().toLowerCase()) || !password.toLowerCase().equals(user.getPassword().toLowerCase())) {
 
-                return new ModelAndView("login");
+                return "redirect:/login";
             }
         }
 
 
-        return null;
+        return "";
     }
 
 }
