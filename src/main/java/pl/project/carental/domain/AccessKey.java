@@ -16,17 +16,28 @@ public class AccessKey {
     @Column(name = "hours", nullable = false)
     private Integer hours;
 
+    @Column(name="a_Key")
+    private String aKey;
+
     @OneToOne
     private User user;
 
-    public AccessKey(Long id, String carPackage, Integer hours, User user) {
-        this.id = id;
+    public AccessKey(String carPackage, Integer hours, User user, String aKey) {
         this.carPackage = carPackage;
         this.hours = hours;
         this.user = user;
+        this.aKey=aKey;
     }
 
     public AccessKey() {
+    }
+
+    public String getaKey() {
+        return aKey;
+    }
+
+    public void setaKey(String aKey) {
+        this.aKey = aKey;
     }
 
     public Long getId() {
