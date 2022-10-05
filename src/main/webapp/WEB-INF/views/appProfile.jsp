@@ -50,7 +50,7 @@
 
         <div class="row border-bottom border-3 p-1 m-1">
             <div class="col noPadding"><h3 class="color-header text-uppercase">Your Rents Car</h3></div>
-            <div class="col noPadding d-flex justify-content-end mb-2"><a href="/app/show/history"
+            <div class="col noPadding d-flex justify-content-end mb-2"><a href="/app/profile/${id}/history"
                                                                           class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">
                 Rents History</a></div>
         </div>
@@ -84,7 +84,7 @@
                         <%--                    access key--%>
                     <td class="col-2">${ak}</td>
                         <%--                    date--%>
-                    <td class="col-2">${dueTo}</td>
+                    <td class="col-2">${date} (${time})</td>
                         <%--    cost--%>
                     <td class="col-1">${cost}</td>
                 </tr>

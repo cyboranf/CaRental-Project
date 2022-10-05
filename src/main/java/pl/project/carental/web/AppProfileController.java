@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -71,29 +72,29 @@ public class AppProfileController {
 
         int hoursToData = hours+(days*24);
 
-        AccessKey ak = new AccessKey(myCarDetails.getPackageName(), hoursToData, myUser,String.valueOf(accessKey+1));
 
-//        LocalDate date=LocalDate.now();
-//        LocalTime time=LocalTime.now();
-//        String dueTo="";
-//
-//        int day = date.getDayOfMonth() + days;
-//        int hour=time.getHour()+hoursToData;
-//
-//        LocalDate dateData=LocalDate.of(date.getYear(),date.getMonthValue(),day);
-//        LocalTime timeData=LocalTime.of(hour,time.getMinute());
-//
-//        String finalDateData=dateData.toString();
-//        String finalTimeData=timeData.toString();
-//
-//        dueTo=finalDateData;
+        AccessKey accessKey2=new AccessKey();
+        accessKey2.setCarPackage(myCarDetails.getPackageName());
+        accessKey2.setHours(hoursToData);
+        accessKey2.setUser(myUser);
+        accessKey2.setaKey(String.valueOf(accessKey+1));
 
+        accessKeyService.saveAccessKey(accessKey2);
+
+        LocalDate dateNow=LocalDate.now();
+        LocalTime timeNow=LocalTime.now();
+
+        LocalDate date=LocalDate.of(dateNow.getYear(),dateNow.getMonthValue(),dateNow.getDayOfMonth()+days);
+        LocalTime time=LocalTime.of(timeNow.getHour()+hours,timeNow.getMinute());
+
+        int price= (int) ((hours*myCarDetails.getPrice_per_hour())+(days*(10*myCarDetails.getPrice_per_hour())));
 
         request.setAttribute("carList",carList); //brand //model //type
         request.setAttribute("id",id);
-        request.setAttribute("ak",ak.getaKey());
-//        request.setAttribute("dueTo",dueTo);
-
+        request.setAttribute("ak",accessKey2.getaKey());
+        request.setAttribute("date",date);
+        request.setAttribute("time",time);
+        request.setAttribute("cost",price);
 
         return new ModelAndView("appProfile");
     }
