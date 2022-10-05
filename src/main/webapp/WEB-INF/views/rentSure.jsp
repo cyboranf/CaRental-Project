@@ -34,7 +34,7 @@
     <div class="form-group">
       <input type="text" class="form-control" id="hours" name="hours" placeholder="hours">
     </div>
-    <button class="btn btn-color rounded-0" type="submit">Confirm</button>
+   <button class="btn btn-color rounded-0" type="submit">Confirm</button>
   </form>
 </div>
 <a href="/app/profile/${cookie.car.value}/${cookie.cookieName.value}?days=${d}&hours=${h}" class="btn btn-warning rounded-0 text-light m-1"><span>Yes</span></a>

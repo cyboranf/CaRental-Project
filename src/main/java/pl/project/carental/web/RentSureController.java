@@ -52,8 +52,24 @@ public class RentSureController {
     }
 
     @PostMapping("/app/sureRent/{id}")
-    public ModelAndView withForm( @RequestParam int days, @RequestParam int hours,
-                                  HttpServletRequest request){
+    public ModelAndView withForm(@RequestParam int days, @RequestParam int hours,
+                                 @PathVariable long id,
+                                 HttpServletRequest request,
+                                 HttpServletResponse response){
+        Car car = carService.findById(id);
+        CarDetails carDetail = carDetailsService.findById(id);
+
+        request.setAttribute("id", id);
+        request.setAttribute("brandd", car.getBrand());
+        request.setAttribute("model", car.getModel());
+        request.setAttribute("fuelType", carDetail.getFuelType());
+        request.setAttribute("packageName", carDetail.getPackageName());
+        request.setAttribute("power", carDetail.getPower());
+        request.setAttribute("pph", carDetail.getPrice_per_hour());
+        request.setAttribute("ppd", carDetail.getPrice_per_day());
+
+        response.addCookie(new Cookie("car", String.valueOf(request.getAttribute("id"))));
+
         request.setAttribute("d", days);
         request.setAttribute("h", hours);
 
