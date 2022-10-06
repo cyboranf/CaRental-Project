@@ -1,5 +1,6 @@
 package pl.project.carental.web;
 
+import org.springframework.boot.web.server.Cookie;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,6 +49,7 @@ public class AppDashboardController {
         CarDetails lastCarDetail=carDetailsList.get(numberOfCars-1);
         request.setAttribute("pph",lastCarDetail.getPrice_per_hour());
         request.setAttribute("ppd",lastCarDetail.getPrice_per_day());
+
 
         return mav;
     }
