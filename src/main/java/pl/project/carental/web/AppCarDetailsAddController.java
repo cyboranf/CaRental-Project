@@ -23,10 +23,10 @@ public class AppCarDetailsAddController {
     }
 
     @PostMapping("/app/carDetails/add")
-    public ModelAndView save(@RequestParam String fuelType,
-                             @RequestParam String PacName,
-                             @RequestParam int power,
-                             @RequestParam double ppd){
+    public String save(@RequestParam String fuelType,
+                       @RequestParam String PacName,
+                       @RequestParam int power,
+                       @RequestParam double ppd){
         CarDetails carDetails=new CarDetails();
         carDetails.setFuelType(fuelType);
         carDetails.setPackageName(PacName);
@@ -34,7 +34,7 @@ public class AppCarDetailsAddController {
         carDetails.setPrice_per_day(ppd);
         carDetails.setPrice_per_hour(ppd/10);
         carDetailsService.saveCarDetails(carDetails);
-        return new ModelAndView("dashboard");
+        return "redirect:/app/dashboard";
 
     }
 }
