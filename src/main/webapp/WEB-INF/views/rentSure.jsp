@@ -27,7 +27,7 @@
     <span>Price for day:</span> ${ppd}
   </h2>
   <form class="padding-small text-center" method="post">
-    <h1 class="text-color-darker">How long would you want to rent for</h1>
+    <h1 class="text-color-darker">How long would you like to rent for</h1>
     <div class="form-group">
       <input type="text" class="form-control" id="days" name="days" placeholder="days">
     </div>

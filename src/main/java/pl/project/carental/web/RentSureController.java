@@ -11,6 +11,7 @@ import pl.project.carental.service.CarService;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class RentSureController {
@@ -59,6 +60,9 @@ public class RentSureController {
         Car car = carService.findById(id);
         CarDetails carDetail = carDetailsService.findById(id);
 
+
+
+
         request.setAttribute("id", id);
         request.setAttribute("brandd", car.getBrand());
         request.setAttribute("model", car.getModel());
@@ -68,10 +72,20 @@ public class RentSureController {
         request.setAttribute("pph", carDetail.getPrice_per_hour());
         request.setAttribute("ppd", carDetail.getPrice_per_day());
 
-        response.addCookie(new Cookie("car", String.valueOf(request.getAttribute("id"))));
+
+
 
         request.setAttribute("d", days);
         request.setAttribute("h", hours);
+
+        Cookie[] cookies=request.getCookies();
+
+        for (Cookie cookie:cookies){
+            cookie.setMaxAge(0);
+            response.addCookie(cookie);
+
+        }
+
 
         return new ModelAndView("rentSure");
     }
