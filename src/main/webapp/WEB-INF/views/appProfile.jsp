@@ -67,32 +67,33 @@
                 <th scope="col" class="col-1">Price</th>
             </tr>
             </thead>
+
+
             <tbody class="text-color-lighter">
 
 
-            <c:forEach items="${carList}" var="car" varStatus="loopStatus">
+
 
                 <tr class="d-flex">
                         <%--                    id--%>
-                    <td class="col-1">${id}</td>
+                    <td class="col-1">${cookie.cookieId.value}</td>
                         <%--                    brand--%>
-                    <td class="col-2">${car.brand}</td>
+                    <td class="col-2">${cookie.cookieBrand.value}</td>
                         <%--                    model--%>
-                    <td class="col-2">${car.model}</td>
+                    <td class="col-2">${cookie.cookieModel.value}</td>
                         <%--                    type--%>
-                    <td class="col-2">${car.type}</td>
+                    <td class="col-2">${cookie.cookieType.value}</td>
                         <%--                    access key--%>
-                    <td class="col-2">${ak}</td>
+                    <td class="col-2">${cookie.cookieAk.value}</td>
                         <%--                    date--%>
-                    <td class="col-2">${date} (${time})</td>
+                    <td class="col-2">${cookie.cookieDate.value} (${cookie.cookieTime.value})</td>
                         <%--    cost--%>
-                    <td class="col-1">${cost}</td>
+                    <td class="col-1">${cookie.cookieCost.value}</td>
                 </tr>
 
-            </c:forEach>
-
-
             </tbody>
+
+
         </table>
     </div>
 </div>
