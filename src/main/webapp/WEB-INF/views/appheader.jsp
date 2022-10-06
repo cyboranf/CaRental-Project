@@ -25,7 +25,7 @@
         </a>
         <div class="d-flex justify-content-around">
             <h4 class="text-light mr-3">Hi, ${cookie.cookieName.value}
-                <a href="/logout">log out?</a> </h4>
+                <a href="/app/logout">log out?</a> </h4>
             <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
         </div>
     </nav>
@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app/profile">
+                <a class="nav-link" href="/app/profile/${cookie.cookieId.value}/${cookie.cookieName.value}?days=${cookie.cookieDays.value}&hours=${cookie.cookieHours.value}">
                     <span>Profile</span>
                     <i class="fas fa-angle-right"></i>
                 </a>

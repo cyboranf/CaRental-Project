@@ -22,7 +22,7 @@
         <ul class="nav nounderline text-uppercase">
 
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="">My profile</a>
+                <a class="nav-link color-header" href="/app/profile/${cookie.cookieId.value}/${cookie.cookieName.value}?days=${cookie.cookieDays.value}&hours=${cookie.cookieHours.value}">My profile</a>
             </li>
 
         </ul>
