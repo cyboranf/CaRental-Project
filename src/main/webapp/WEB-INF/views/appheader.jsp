@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app/profile/${cookie.cookieId.value}/${cookie.cookieName.value}?days=${cookie.cookieDays.value}&hours=${cookie.cookieHours.value}">
+                <a class="nav-link" href="/app/profile/${cookie.cookieUserID.value}">
                     <span>Profile</span>
                     <i class="fas fa-angle-right"></i>
                 </a>

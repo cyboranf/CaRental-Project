@@ -50,7 +50,7 @@
 
     <div class="row border-bottom border-3 p-1 m-1">
       <div class="col noPadding"><h3 class="color-header text-uppercase">Your Rents History</h3></div>
-      <div class="col noPadding d-flex justify-content-end mb-2"><a href="/app/profile/${cookie.cookieId.value}/${cookie.cookieName.value}?days=${cookie.cookieDays.value}&hours=${cookie.cookieHours.value}"
+      <div class="col noPadding d-flex justify-content-end mb-2"><a href="/app/profile/${cookie.cookieUserID.value}"
                                                                     class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">
         Currents Rent</a></div>
     </div>
@@ -72,25 +72,24 @@
 
 
 
+      <c:forEach items="${rentedCar}"  var="rentedCar" >
         <tr class="d-flex">
             <%--                    id--%>
-          <td class="col-1">${id}</td>
+          <td class="col-1">${rentedCar.carId}</td>
             <%--                    brand--%>
-          <td class="col-2">${car.brand}</td>
+          <td class="col-2">${rentedCar.carBrand}</td>
             <%--                    model--%>
-          <td class="col-2">${car.model}</td>
+          <td class="col-2">${rentedCar.carModel}</td>
             <%--                    type--%>
-          <td class="col-2">${car.type}</td>
+          <td class="col-2">${rentedCar.carType}</td>
             <%--                    access key--%>
-          <td class="col-2">${ak}</td>
+          <td class="col-2">${rentedCar.accessKey}</td>
             <%--                    date--%>
-          <td class="col-2">${date} (${time})</td>
+          <td class="col-2">${rentedCar.date} (${rentedCar.time})</td>
             <%--    cost--%>
-          <td class="col-1">${cost}</td>
+          <td class="col-1">${rentedCar.price}</td>
         </tr>
-
-
-
+      </c:forEach>
 
       </tbody>
     </table>

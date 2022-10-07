@@ -35,6 +35,9 @@ public class RentedCar {
     @Column(name = "price")
     private int price;
 
+    @Column(name = "isAvail")
+    private boolean isAvail;
+
     public RentedCar(long userId, long carId, String carBrand, String carModel, String carType, String accessKey, String date, String time, int price) {
         this.userId = userId;
         this.carId = carId;
@@ -48,6 +51,14 @@ public class RentedCar {
     }
 
     public RentedCar() {
+    }
+
+    public boolean isAvail() {
+        return isAvail;
+    }
+
+    public void setAvail(boolean avail) {
+        isAvail = avail;
     }
 
     public long getUserId() {
