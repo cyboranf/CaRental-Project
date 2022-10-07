@@ -7,6 +7,7 @@ import pl.project.carental.domain.AccessKey;
 import pl.project.carental.domain.Car;
 import pl.project.carental.domain.CarDetails;
 import pl.project.carental.domain.User;
+import pl.project.carental.dto.RentCarList;
 import pl.project.carental.service.AccessKeyService;
 import pl.project.carental.service.CarDetailsService;
 import pl.project.carental.service.CarService;
@@ -19,7 +20,9 @@ import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AppProfileController {
@@ -37,7 +40,8 @@ public class AppProfileController {
     }
 
     public int accessKey = 688215; //6cyfr
-
+    public Map<Integer, List<RentCarList>> finalMap = new HashMap<>();
+    public List<RentCarList> finalList = new ArrayList<>();
 
     @GetMapping("/app/profile")
     public ModelAndView show() {
@@ -60,7 +64,7 @@ public class AppProfileController {
         User myUser = null;
         List<User> userList = userService.findAll();
 
-        List<Car> carList=new ArrayList<>();
+        List<Car> carList = new ArrayList<>();
         carList.add(myCar);
 
         for (User user : userList) {
@@ -69,79 +73,81 @@ public class AppProfileController {
             }
         }
 
-        int hoursToData = hours+(days*24);
+        int hoursToData = hours + (days * 24);
 
 
-        AccessKey accessKey2=new AccessKey();
+        AccessKey accessKey2 = new AccessKey();
         accessKey2.setCarPackage(myCarDetails.getPackageName());
         accessKey2.setHours(hoursToData);
         accessKey2.setUser(myUser);
-        accessKey2.setaKey(String.valueOf(accessKey+1));
+        accessKey2.setaKey(String.valueOf(accessKey + 1));
 
         accessKeyService.saveAccessKey(accessKey2);
 
-        LocalDate dateNow=LocalDate.now();
-        LocalTime timeNow=LocalTime.now();
+        LocalDate dateNow = LocalDate.now();
+        LocalTime timeNow = LocalTime.now();
 
-        LocalDate date1=LocalDate.of(dateNow.getYear(),dateNow.getMonthValue(),dateNow.getDayOfMonth()+days);
-        LocalTime time1=LocalTime.of(timeNow.getHour()+hours,timeNow.getMinute());
+        LocalDate date1 = LocalDate.of(dateNow.getYear(), dateNow.getMonthValue(), dateNow.getDayOfMonth() + days);
+        LocalTime time1 = LocalTime.of(timeNow.getHour() + hours, timeNow.getMinute());
 
-        String time=time1.toString();
-        String date=date1.toString();
+        String time = time1.toString();
+        String date = date1.toString();
 
-        int price= (int) ((hours*myCarDetails.getPrice_per_hour())+(days*(10*myCarDetails.getPrice_per_hour())));
-
-
-
-        request.setAttribute("carList",carList); //brand //model //type
-        request.setAttribute("id",id);
-        request.setAttribute("ak",accessKey2.getaKey());
-        request.setAttribute("date",date);
-        request.setAttribute("time",time);
-        request.setAttribute("cost",String.valueOf(price));
+        int price = (int) ((hours * myCarDetails.getPrice_per_hour()) + (days * (10 * myCarDetails.getPrice_per_hour())));
 
 
-        HttpSession loginSession= request.getSession();
-        loginSession.setAttribute("rented",true);
+        request.setAttribute("id", id);
+        request.setAttribute("ak", accessKey2.getaKey());
+        request.setAttribute("date", date);
+        request.setAttribute("time", time);
+        request.setAttribute("cost", String.valueOf(price));
 
 
+        HttpSession loginSession = request.getSession();
+        loginSession.setAttribute("rented", true);
 
-        Cookie cookieAk=new Cookie("cookieAk",(String)request.getAttribute("ak"));
+
+        Cookie[] cookies = request.getCookies();
+
+        int userId = 0;
+
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("cookieUserID")) {
+                userId = Integer.parseInt(cookie.getValue());
+            }
+        }
+
+
+        Cookie cookieAk = new Cookie("cookieAk", (String) request.getAttribute("ak"));
         response.addCookie(cookieAk);
 
-        Cookie cookieDate=new Cookie("cookieDate", (String) request.getAttribute("date"));
+        Cookie cookieDate = new Cookie("cookieDate", (String) request.getAttribute("date"));
         response.addCookie(cookieDate);
 
-        Cookie cookieTime=new Cookie("cookieTime", (String) request.getAttribute("time"));
+        Cookie cookieTime = new Cookie("cookieTime", (String) request.getAttribute("time"));
         response.addCookie(cookieTime);
 
-        Cookie cookieCost=new Cookie("cookieCost", (String) request.getAttribute("cost"));
+        Cookie cookieCost = new Cookie("cookieCost", (String) request.getAttribute("cost"));
         response.addCookie(cookieCost);
 
-        Cookie cookieId=new Cookie("cookieId", String.valueOf(myCar.getId()));
+        Cookie cookieId = new Cookie("cookieId", String.valueOf(myCar.getId()));
         response.addCookie(cookieId);
 
-        Cookie cookieBrand=new Cookie("cookieBrand", myCar.getBrand());
+        Cookie cookieBrand = new Cookie("cookieBrand", myCar.getBrand());
         response.addCookie(cookieBrand);
 
-        Cookie cookieModel=new Cookie("cookieModel", myCar.getModel());
+        Cookie cookieModel = new Cookie("cookieModel", myCar.getModel());
         response.addCookie(cookieModel);
 
-        Cookie cookieType=new Cookie("cookieType", myCar.getType());
+        Cookie cookieType = new Cookie("cookieType", myCar.getType());
         response.addCookie(cookieType);
 
-        Cookie cookieHours=new Cookie("cookieHours",String.valueOf(hours));
+        Cookie cookieHours = new Cookie("cookieHours", String.valueOf(hours));
         response.addCookie(cookieHours);
 
-        Cookie cookieDays=new Cookie("cookieDays",String.valueOf(days));
+        Cookie cookieDays = new Cookie("cookieDays", String.valueOf(days));
         response.addCookie(cookieDays);
 
-        Cookie[] cookies2=request.getCookies();
-
-        for (Cookie cookie:cookies2){
-            cookie.setPath("/app");
-            response.addCookie(cookie);
-        }
 
         return new ModelAndView("appProfile");
     }

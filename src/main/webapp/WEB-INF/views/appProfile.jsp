@@ -72,25 +72,24 @@
             <tbody class="text-color-lighter">
 
 
-
-
+            <c:forEach items="${finalList}"  var="c" >
                 <tr class="d-flex">
                         <%--                    id--%>
-                    <td class="col-1">${cookie.cookieId.value}</td>
+                    <td class="col-1">${c.id}</td>
                         <%--                    brand--%>
-                    <td class="col-2">${cookie.cookieBrand.value}</td>
+                    <td class="col-2">${c.brand}</td>
                         <%--                    model--%>
-                    <td class="col-2">${cookie.cookieModel.value}</td>
+                    <td class="col-2">${c.model}</td>
                         <%--                    type--%>
-                    <td class="col-2">${cookie.cookieType.value}</td>
+                    <td class="col-2">${c.type}</td>
                         <%--                    access key--%>
-                    <td class="col-2">${cookie.cookieAk.value}</td>
+                    <td class="col-2">${c.akey}</td>
                         <%--                    date--%>
-                    <td class="col-2">${cookie.cookieDate.value} (${cookie.cookieTime.value})</td>
+                    <td class="col-2">${c.date}</td>
                         <%--    cost--%>
-                    <td class="col-1">${cookie.cookieCost.value}</td>
+                    <td class="col-1">${c.price}</td>
                 </tr>
-
+            </c:forEach>
             </tbody>
 
 
