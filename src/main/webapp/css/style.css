@@ -23,6 +23,7 @@
 html {
     min-height: 100%;
 }
+
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -40,12 +41,15 @@ p {
 .noPadding {
     padding: 0;
 }
+
 .noMargin {
     margin: 0;
 }
+
 .center {
     text-align: center;
 }
+
 .btn-color {
     background-color: red;
     color: var(--light-link-color);
@@ -53,6 +57,7 @@ p {
     font-size: 20px;
     padding: 8px 18px;
 }
+
 .btn-color a {
     text-decoration: none;
     color: var(--light-link-color);
@@ -61,22 +66,24 @@ p {
 .btn-color:hover {
     opacity: .8;
 }
+
 .label-size {
     font-size: 1.4rem;
     color: var(--background-color);
 }
+
 hr {
     border: 0;
     margin-bottom: 4px;
-    clear:both;
-    display:block;
+    clear: both;
+    display: block;
     width: 100%;
-    background-color:var(--background-color);
+    background-color: var(--background-color);
     height: 1px;
 }
 
-.border-dashed{
-    border: .5px dashed  var(--lighter-background-color);
+.border-dashed {
+    border: .5px dashed var(--lighter-background-color);
     background: var(--light-link-color);
 }
 
@@ -85,7 +92,7 @@ hr {
 }
 
 .border-3 {
-    border-width:3px !important;
+    border-width: 3px !important;
     border-bottom-color: #cacaca !important;
 }
 
@@ -139,19 +146,19 @@ hr {
 }
 
 .nav-link {
-    color: var(--light-link-color)!important;
+    color: var(--light-link-color) !important;
     font-size: 1.1rem;
 }
 
 .page-header .nav .nav-item .active,
-.page-header .nav .nav-item a:hover{
-    color: red!important;
+.page-header .nav .nav-item a:hover {
+    color: red !important;
 }
 
 .main-logo {
     font-family: "Charmonman", cursive;
     display: inline-block;
-    color: var(--light-link-color)!important;
+    color: var(--light-link-color) !important;
     margin-top: 10px;
     font-size: 2.7rem;
     font-weight: 600;
@@ -177,8 +184,7 @@ hr {
     background-image: none;
 }
 
-.carousel-control-next-icon:after
-{
+.carousel-control-next-icon:after {
     content: '>';
     font-size: 55px;
     color: var(--dark-text);
@@ -278,7 +284,7 @@ hr {
 /*---- Footer section ----*/
 /*------------------------------*/
 
-.footer-section{
+.footer-section {
     background: var(--background-color);
 }
 
@@ -314,37 +320,44 @@ hr {
     flex-wrap: nowrap;
     margin: 0;
 }
+
 .long-bg {
     background: var(--lighter-background-color);
     display: inline-block;
     vertical-align: top;
     min-height: 100%;
 }
+
 .dashboard-section .nav-item {
     display: block;
     width: 260px;
     margin-bottom: 20px;
 }
+
 .dashboard-section .nav-item i.fa-angle-right {
     display: none;
 }
+
 .dashboard-section .nav-item .nav-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .dashboard-section .nav-item a {
     font-size: 1.5rem;
     border-left: 5px solid transparent;
 }
+
 .dashboard-section .nav-item a.active,
 .dashboard-section .nav-item a:hover {
     border-left: 5px solid var(--link-color);
 }
+
 .dashboard-section .nav-item a.active i.fa-angle-right,
 .dashboard-section .nav-item:hover i.fa-angle-right {
     display: block;
-    color: var(--link-color)!important;
+    color: var(--link-color) !important;
 }
 
 .circle-div {
@@ -359,9 +372,11 @@ hr {
     font-size: 2rem;
     color: red;
 }
+
 .icon-circle {
     font-size: 2rem;
 }
+
 .icon-calendar {
     font-size: 2rem;
 }
@@ -375,11 +390,13 @@ hr {
     display: flex;
     justify-content: space-between;
 }
+
 .dashboard-menu {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .dashboard-menu .menu-item {
     width: 100px;
     height: 160px;
@@ -387,12 +404,15 @@ hr {
     padding-top: 15px;
     margin-right: 20px;
 }
+
 .dashboard-menu .menu-item a {
     color: var(--green);
 }
+
 .dashboard-menu .menu-item:last-child {
     margin-right: 0;
 }
+
 .dashboard-menu .menu-item .title {
     display: block;
     padding-top: 10px;
@@ -404,25 +424,30 @@ hr {
     margin-left: 70px;
     width: 90%;
 }
+
 .alert-item {
     padding: 10px;
     margin-bottom: 15px;
     display: flex;
     align-items: normal;
 }
+
 .alert-item span {
     margin-left: 15px;
 }
+
 .alert-info {
     background: #fff;
     border: 1px dashed var(--blue);
     color: var(--blue);
 }
+
 .alert-light {
     background: #fff;
     border: 1px dashed var(--yellow);
     color: var(--yellow);
 }
+
 .icon-plus-square {
     font-size: 3.5rem;
 }
@@ -430,12 +455,14 @@ hr {
 .dashboard-content {
     margin-top: 20px;
 }
+
 .dashboard-content-title {
     font-size: 1.2rem;
     text-align: center;
     font-weight: bold;
     margin: 20px 0;
 }
+
 .dashboard-content-title span {
     color: var(--link-color);
 }
@@ -447,15 +474,18 @@ hr {
 .schedules-content {
     margin-top: 20px;
 }
+
 .schedules-text {
     font-size: .9rem;
     margin-bottom: 0;
 
 }
+
 .schedules-content .form-group.row {
     display: flex;
     align-items: center;
 }
+
 .schedules-content-header {
     margin-bottom: 50px;
 }
