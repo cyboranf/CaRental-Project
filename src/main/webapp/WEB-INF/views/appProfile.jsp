@@ -50,7 +50,7 @@
 
         <div class="row border-bottom border-3 p-1 m-1">
             <div class="col noPadding"><h3 class="color-header text-uppercase">Your Rents Car</h3></div>
-            <div class="col noPadding d-flex justify-content-end mb-2"><a href="/app/profile/${id}/history"
+            <div class="col noPadding d-flex justify-content-end mb-2"><a href="/app/profile/history/${cookie.cookieUserID.value}"
                                                                           class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">
                 Rents History</a></div>
         </div>
@@ -72,22 +72,22 @@
             <tbody class="text-color-lighter">
 
 
-            <c:forEach items="${finalList}"  var="c" >
+            <c:forEach items="${rentedCar}"  var="rentedCar" >
                 <tr class="d-flex">
                         <%--                    id--%>
-                    <td class="col-1">${c.id}</td>
+                    <td class="col-1">${rentedCar.carId}</td>
                         <%--                    brand--%>
-                    <td class="col-2">${c.brand}</td>
+                    <td class="col-2">${rentedCar.carBrand}</td>
                         <%--                    model--%>
-                    <td class="col-2">${c.model}</td>
+                    <td class="col-2">${rentedCar.carModel}</td>
                         <%--                    type--%>
-                    <td class="col-2">${c.type}</td>
+                    <td class="col-2">${rentedCar.carType}</td>
                         <%--                    access key--%>
-                    <td class="col-2">${c.akey}</td>
+                    <td class="col-2">${rentedCar.accessKey}</td>
                         <%--                    date--%>
-                    <td class="col-2">${c.date}</td>
+                    <td class="col-2">${rentedCar.date} (${rentedCar.time})</td>
                         <%--    cost--%>
-                    <td class="col-1">${c.price}</td>
+                    <td class="col-1">${rentedCar.price}</td>
                 </tr>
             </c:forEach>
             </tbody>
