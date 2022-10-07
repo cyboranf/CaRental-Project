@@ -42,6 +42,7 @@ public class LoginController {
             if (name.toLowerCase().equals(user.getFirstname().toLowerCase()) && password.toLowerCase().equals(user.getPassword().toLowerCase())) {
                 HttpSession loginSession= request.getSession();
                 response.addCookie(new Cookie("cookieName",user.getFirstname()));
+                response.addCookie(new Cookie("cookieUserID",String.valueOf(user.getId())));
                 loginSession.setAttribute("logged",true);
                 loginSession.setAttribute("user",user);
                 login=user.getFirstname();
