@@ -20,7 +20,7 @@ public class Car {
     @Column(name = "is_available",nullable = false)
     private Boolean is_available;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
