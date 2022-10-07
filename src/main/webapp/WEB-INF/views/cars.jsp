@@ -9,7 +9,7 @@
 
     <div class="row border-bottom border-3 p-1 m-1">
       <div class="col noPadding"><h3 class="color-header text-uppercase">Car List</h3></div>
-      <div class="col noPadding d-flex justify-content-end mb-2"><a href="/app/rentCar"
+      <div class="col noPadding d-flex justify-content-end mb-2"><a href="/login"
                                                                     class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">
         Rent Car</a></div>
     </div>
@@ -33,7 +33,6 @@
           <td class="col-2">${car.brand}</td>
           <td class="col-7">${car.model}, ${car.type}</td>
           <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
-            <a href="/app/car/details/${car.id}" class="btn btn-info rounded-0 text-light m-1">Details</a>
           </td>
         </tr>
 
