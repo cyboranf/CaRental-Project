@@ -36,6 +36,7 @@ public class AppDashboardController {
             }
             numberOfCars+=1;
         }
+
         request.setAttribute("numberOfCars",numberOfCars);
         request.setAttribute("numberOfAvailCars",numberOfAvailCars);
 
